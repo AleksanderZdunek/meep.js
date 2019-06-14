@@ -2,10 +2,10 @@
 let meep = (function()
 {
 	let counter = 0;
-	return function(string)
+	return function(...args)
 	{
-		console.log(string);
-		document.body.innerHTML += ++counter + ": " + string + "<br>";  
+		console.log(...args);
+		document.body.innerHTML += ++counter + ": " + (args.length ? args.reduce((acc, val) => acc + " " + val) : "") + "<br>";
 	};
 })();
 //-----------------//
